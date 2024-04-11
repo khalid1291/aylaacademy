@@ -46,9 +46,9 @@ workflows:
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
       publishing:
         app_store_connect:
-            api_key: $APP_STORE_CONNECT_PRIVATE_KEY
-            key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-            issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+            api_key: 6899f080-8c08-4176-9d64-a14ddcb51f89ccfbed88-82c3-468c-b
+            key_id: aylaacademy (com.aylaacademy.bundleId)
+            issuer_id: 64af8877-f3fc-49ef-854c-23cd2888fc3e
             submit_to_testflight: false
         email:
             recipients:
