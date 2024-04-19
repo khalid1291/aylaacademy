@@ -1,4 +1,4 @@
-workflows:codemga
+workflows:
   ios-workflow:
     name: aylaacademy ios_app_store 1713492560
     max_build_duration: 120
@@ -8,23 +8,15 @@ workflows:codemga
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.aylaacademy.bundleId
-        APP_STORE_APPLE_ID:
-com.aylaacademy.bundleId :
-      flutter: stable
-
-
+        APP_STORE_APPLE_ID: com.aylaacademy.bundleId
 
     scripts:
       - name: Set up code signing settings on Xcode project
         script: | 
-          xcode-project use-profiles
+          xcode-project use-profiles -p path/to/your/project
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
-
-
-
-
       - name: Install pods
         script: | 
           find . -name "Podfile" -execdir pod install \;
@@ -41,10 +33,12 @@ com.aylaacademy.bundleId :
             --build-name=1.0.0 \
             --build-number=$(($(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID") + 1)) \
             --export-options-plist=/Users/builder/export_options.plist
+
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
+
     publishing:
       email:
         recipients:
@@ -55,14 +49,8 @@ com.aylaacademy.bundleId :
           failure: false
       app_store_connect:
         auth: integration
-
-        # Configuration related to TestFlight (optional)
-        # Note: This action is performed during post-processing.
         submit_to_testflight: true
-        beta_groups: # Specify the names of beta tester groups that will get access to the build once it has passed beta review.
+        beta_groups:
           - group name 1
           - group name 2
-
-        # Configuration related to App Store (optional)
-        # Note: This action is performed during post-processing.
         submit_to_app_store: false
