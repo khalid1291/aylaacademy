@@ -10,7 +10,7 @@ workflows:
             distribution_type: app_store
             bundle_identifier: com.aylaacademy.bundleId 
         vars:
-          APP_STORE_APPLE_ID: 1713139097
+          APP_STORE_APPLE_ID: 1713139097:
 
     scripts:
       - name: Set up code signing settings on Xcode project
