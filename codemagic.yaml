@@ -1,6 +1,6 @@
 workflows:
   ios-workflow:
-    name: aylaacademy ios_app_store 1713492560
+    name: aylaacademy 
     max_build_duration: 120
     integrations:
       app_store_connect: aylaacademy ios_app_store 1713492560
