@@ -11,11 +11,18 @@ workflows:
         APP_STORE_APPLE_ID:
 com.aylaacademy.bundleId :
       flutter: stable
+
+
+
+
+
+
     scripts:
-      - name: Set up code signing settings on Xcode project
-        script: | 
-          xcode-project use-profiles
-      - name: Get Flutter packages
+      - name: Build for iOS   
+ 
+        script:flutter build ios
+ 
+          
         script: | 
           flutter packages pub get
       - name: Install pods
