@@ -4,16 +4,16 @@ workflows:
     max_build_duration: 120
     integrations:
   
-app_store_connect:
-    api_key: X8806HY4KFNS
-    key_id: K9H43QHC72
-    issuer_id: 64af8877-f3fc-49ef-854c-23cd2888fc3e
-    environment:
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.aylaacademy.bundleId 
-      vars:
-        APP_STORE_APPLE_ID: 1713139097
+    app_store_connect:
+        api_key: X8806HY4KFNS
+        key_id: K9H43QHC72
+        issuer_id: 64af8877-f3fc-49ef-854c-23cd2888fc3e
+        environment:
+          ios_signing:
+            distribution_type: app_store
+            bundle_identifier: com.aylaacademy.bundleId 
+        vars:
+          APP_STORE_APPLE_ID: 1713139097
 
     scripts:
       - name: Set up code signing settings on Xcode project
