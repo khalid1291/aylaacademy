@@ -3,7 +3,7 @@ workflows:
     name: aylaacademy 
     max_build_duration: 120
     integrations:
-      app_store_connect: Apple Distribution: Younis Qfaisheh (K2VX6S449S)
+      app_store_connect: Apple Distribution Younis Qfaisheh (K2VX6S449S)
     environment:
       ios_signing:
         distribution_type: app_store
