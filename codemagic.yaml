@@ -15,12 +15,16 @@ com.aylaacademy.bundleId :
 
 
     scripts:
-  - name: Build for iOS         
-    
-
-
+      - name: Set up code signing settings on Xcode project
+        script: | 
+          xcode-project use-profiles
+      - name: Get Flutter packages
         script: | 
           flutter packages pub get
+
+
+
+
       - name: Install pods
         script: | 
           find . -name "Podfile" -execdir pod install \;
