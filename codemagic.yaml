@@ -7,8 +7,8 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.aylaacademy.bundleId
-        APP_STORE_APPLE_ID: com.aylaacademy.bundleId
+        bundle_identifier: com.aylaacademy.bundleId:
+        APP_STORE_APPLE_ID: com.aylaacademy.bundleId:
 
     scripts:
       - name: Set up code signing settings on Xcode project
