@@ -5,7 +5,7 @@ workflows:
     integrations:
   
 app_store_connect:
-    api_key: @env:AUTH_KEY
+    api_key: X8806HY4KFNS
     key_id: K9H43QHC72
     issuer_id: 64af8877-f3fc-49ef-854c-23cd2888fc3e
     environment:
