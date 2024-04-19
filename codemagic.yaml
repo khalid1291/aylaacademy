@@ -3,8 +3,7 @@ workflows:
     name: aylaacademy 
     max_build_duration: 120
     integrations:
-  
-    app_store_connect:
+      app_store_connect:
         api_key: X8806HY4KFNS
         key_id: K9H43QHC72
         issuer_id: 64af8877-f3fc-49ef-854c-23cd2888fc3e
