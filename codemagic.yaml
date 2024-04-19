@@ -3,7 +3,7 @@ workflows:
     name: aylaacademy 
     max_build_duration: 120
     integrations:
-      app_store_connect:K9H43QHC72
+      app_store_connect:K9H43QHC72:
         
         environment:
           ios_signing:
