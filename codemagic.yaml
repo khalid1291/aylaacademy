@@ -11,8 +11,11 @@ workflows:
         APP_STORE_APPLE_ID:
 com.aylaacademy.bundleId :
       flutter: stable
+
+
+
     scripts:
-  - name: Build for iOS         # Name of the section
+  - name: Build for iOS         
     
 
 
