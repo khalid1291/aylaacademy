@@ -10,7 +10,7 @@ workflows:
         bundle_identifier: com.aylaacademy.bundleId
         APP_STORE_APPLE_ID:
 com.aylaacademy.bundleId :
-      flutter: stable
+      flutter: stable:
 
 
 
