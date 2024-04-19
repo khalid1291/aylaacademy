@@ -7,7 +7,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier com.aylaacademy.bundleId:
+        bundle_identifier com.aylaacademy.bundleId
         APP_STORE_APPLE_ID: 1713139097
 
     scripts:
