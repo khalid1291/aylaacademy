@@ -18,11 +18,10 @@ com.aylaacademy.bundleId :
 
 
     scripts:
-      - name: Build for iOS   
- 
-        script:flutter build ios
- 
-          
+  - name: Build for iOS         # Name of the section
+    script: flutter build ios   # The script(s) to be run in that section
+
+
         script: | 
           flutter packages pub get
       - name: Install pods
