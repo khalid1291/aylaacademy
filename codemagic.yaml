@@ -8,7 +8,7 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.aylaacademy.bundleId
-        APP_STORE_APPLE_ID: app-gh@kabsetzr.com
+        APP_STORE_APPLE_ID: X8806HY4KFNS
       flutter: stable
     scripts:
       - name: Set up code signing settings on Xcode project
