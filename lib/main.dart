@@ -1,9 +1,6 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 
-// ignore_for_file: public_member_api_docs
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -72,14 +69,21 @@ Page resource error:
   isForMainFrame: ${error.isForMainFrame}
           ''');
 },
-onNavigationRequest: (NavigationRequest request) {
-if (request.url.startsWith('https://www.youtube.com/')) {
-debugPrint('blocking navigation to ${request.url}');
-return NavigationDecision.prevent;
-}
-debugPrint('allowing navigation to ${request.url}');
-return NavigationDecision.navigate;
-},
+  onNavigationRequest: (NavigationRequest request) {
+    // التحقق مما إذا كانت الصفحة تنتمي إلى https://www.aylaacademy.com
+    if (request.url.startsWith('https://www.aylaacademy.com')) {
+      // فتح الصفحة داخل WebView
+      return NavigationDecision.navigate;
+    } else {
+      // فتح الصفحة في متصفح الجهاز
+      launch(request.url);
+      // منع فتح الرابط داخل WebView
+      return NavigationDecision.prevent;
+    }
+  },
+
+
+
 onUrlChange: (UrlChange change) {
 debugPrint('url change to ${change.url}');
 },
@@ -125,9 +129,14 @@ actions: <Widget>[
 NavigationControls(webViewController: _controller),
 ],
 ),
-body: WebViewWidget(controller: _controller),
+body: WebViewWidget(controller: _controller
+,
+
+
+),
 
         ),
+
   );
 }
 
@@ -138,6 +147,7 @@ final TextEditingController usernameTextController =
 TextEditingController();
 final TextEditingController passwordTextController =
 TextEditingController();
+/*
 
 return showDialog(
 context: context,
@@ -186,7 +196,11 @@ child: const Text('Authenticate'),
 ],
 );
 },
+
 );
+
+ */
+
 }
 }
 
@@ -216,7 +230,7 @@ void _showExitConfirmationDialog(BuildContext context) {
     },
   );
 }
-
+/*
 enum MenuOptions {
 showUserAgent,
 listCookies,
@@ -234,6 +248,8 @@ setCookie,
 logExample,
 basicAuthentication,
 }
+
+ */
 
 
 class NavigationControls extends StatelessWidget {
@@ -290,7 +306,15 @@ IconButton(
 icon: const Icon(Icons.replay),
 onPressed: () => webViewController.reload(),
 ),
+
 ],
-);
+
+)
+
+;
+
+
 }
+
+
 }
